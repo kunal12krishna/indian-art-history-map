@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Indian Art History Map</title>
+  
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+  
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="app-header">
+    <div class="header-content">
+      <h1>Indian Art History Map</h1>
+      <p class="tagline">Explore the geographic spread and artistic movements across India</p>
+    </div>
+  </header>
+
+  <div class="app-container">
+    <!-- Sidebar: Filters and Location List -->
+    <aside class="sidebar">
+      <div class="filter-section">
+        <label for="categoryFilter">Filter by Era / Style:</label>
+        <select id="categoryFilter">
+          <option value="all">All Styles & Eras (12)</option>
+          <option value="Prehistoric">Prehistoric Rock Art</option>
+          <option value="Classical">Classical Buddhist Murals</option>
+          <option value="Medieval">Medieval Temples & Bronzes</option>
+          <option value="Miniature">Miniature Paintings (Pahari / Rajasthani)</option>
+          <option value="Folk & Tribal">Folk & Indigenous Traditions</option>
+          <option value="Urban Folk">Urban Folk (Kalighat)</option>
+          <option value="Modern Revival">Modern Revival (Bengal School)</option>
+        </select>
+      </div>
+
+      <div class="locations-list" id="locationsList">
+        <!-- Injected via JavaScript -->
+      </div>
+    </aside>
+
+    <!-- Map View -->
+    <main class="map-wrapper">
+      <div id="map"></div>
+    </main>
+
+    <!-- Detail Panel for Selected Location -->
+    <section class="detail-panel" id="detailPanel">
+      <button class="close-btn" id="closeDetailBtn" aria-label="Close details">&times;</button>
+      <div class="detail-content" id="detailContent">
+        <!-- Rendered dynamically on marker or list click -->
+        <div class="detail-placeholder">
+          <p>Click on any marker on the map or select a site from the list to explore its art movement, history, and masterworks.</p>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  
+  <!-- Data & Application Logic -->
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
